@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>FormsTask</title>
+    </head>
+    <body>
+        <form action="" name="form1">
+            <label>Name</label>
+            <input type="text" name="FII1" value="F1Value1" id="input1">
+            <label>Age</label>
+            <input type="text" name="F1I2" value="F1Value1" id="input2">
+            <label>City</label>
+            <input type="text" name="F1I3" value="F1Value1" id="input2">
+            <button name="submit">Submit</button>
+        </form>
+        <form action="" name="form2">
+            <label>Name</label>
+            <input type="text" name="F2I1" value="F2Value2" id="input1">
+            <label>Age</label>
+            <input type="text" name="F2I2" value="F2Value2" id="input2">
+            <button>Submit</button>
+        </form>
+        <form action="" name="form3">
+            <label>Name</label>
+            <input type="text" name="F3I1" value="F3Value3" id="input1">
+            <label>Age</label>
+            <input type="text" name="F3I2" value="F3Value3" id="input2">
+            <button>Submit</button>
+        </form>
+         <form action="" name="form4">
+            <label>Name</label>
+            <input type="text" name="F4I1" value="F4Value4"  id="input1">
+            <label>Age</label>
+            <input type="text" name="F4I2" value="F4Value4" id="input2">
+            <button >Submit</button>
+        </form>
+        <form action="" name="form5">
+            <label>Name</label>
+            <input type="text" name="F5I1" value="F5Value5" id="input1">
+            <label>Age</label>
+            <input type="text" name="F5I2" value="F5Value5" id="input2">
+            <button>Submit</button>
+        </form>
+    </body>
+    <script>
+        function formObj()
+        {
+            var obj1={};
+            for(let i of document.forms)
+            {       
+                let arr=[];
+                for(let j of i)
+                {           
+                    let inputName=j.name;
+                    let inputVal=j.value;
+                    if(j.nodeName=='INPUT')
+                    {
+                        arr.push({[inputName]:inputVal}); 
+                    }
+                } 
+                obj1[i.name]=arr;        
+            } 
+            console.log(obj1); 
+        }
+        formObj();
+    </script>   
+</html>
